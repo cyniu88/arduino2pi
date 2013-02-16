@@ -1,4 +1,4 @@
-CXXFLAGS=-felide-constructors -std=c++11
+CXXFLAGS=-felide-constructors -std=c++11 -I/usr/local/include
 
 all: *.h *.cpp
 	g++ -c WString.cpp

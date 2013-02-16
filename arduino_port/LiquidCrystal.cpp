@@ -5,6 +5,8 @@
 #include <inttypes.h>
 //#include "Arduino.h"
 
+#include <wiringPi.h>
+
 // When the display powers up, it is configured as follows:
 //
 // 1. Display clear
