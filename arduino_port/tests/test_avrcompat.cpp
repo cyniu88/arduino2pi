@@ -9,21 +9,21 @@ void test01itoa()
 {
 	char buf[16];
 	itoa(42, buf, 10);
-	assert(!strcmp("42", buf, 10));
+	assert(!strcmp("42", buf));
 }
 
 void test02itoa()
 {
 	char buf[16];
 	itoa(-42, buf, 10);
-	assert(!strcmp("-42", buf, 10));
+	assert(!strcmp("-42", buf));
 }
 
 void test03itoa()
 {
 	char buf[16];
-	itoa(42, buf, 10);
-	assert(!strcmp("2A", buf, 16));
+	itoa(42, buf, 16);
+	assert(!strcmp("2A", buf));
 }
 
 void test04itoa()
@@ -31,7 +31,7 @@ void test04itoa()
 	char buf[16];
 	unsigned char c = 255;
 	itoa(c, buf, 10);
-	assert(!strcmp("255", buf, 10));
+	assert(!strcmp("255", buf));
 }
 
 int main(int argc, char** argv)
