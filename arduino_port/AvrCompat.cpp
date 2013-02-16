@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void itoa(int val, char* buf, int base)
+void ltoa(long val, char* buf, int base)
 {
 	const char* digits = "0123456789ABCDEF";
 	int neg = val < 0;
@@ -21,6 +21,20 @@ void itoa(int val, char* buf, int base)
 	buf[len + neg] = 0;
 	while (val) {
 		buf[len + neg - 1] = digits[val % base];
+		val /= base;
+		len--;
+	}
+}
+
+
+void ultoa(unsigned long val, char* buf, int base)
+{
+	const char* digits = "0123456789ABCDEF";
+	int len;
+	len = ceil(log(val)/log(base));
+	buf[len] = 0;
+	while (val) {
+		buf[len + 1] = digits[val % base];
 		val /= base;
 		len--;
 	}

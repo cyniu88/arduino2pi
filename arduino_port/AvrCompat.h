@@ -1,9 +1,11 @@
 #ifndef __AVRCOMPAT_H__
 #define __AVRCOMPAT_H_
 
-#define utoa itoa
+#define utoa ultoa
+#define itoa ltoa
 
-void itoa(int val, char* buf, int base);
+void ltoa(long val, char* buf, int base);
+void ultoa(long val, char* buf, int base);
 
 #endif
 
