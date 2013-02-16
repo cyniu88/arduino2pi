@@ -19,11 +19,12 @@
  Modified 23 November 2006 by David A. Mellis
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include "Arduino.h"
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <cassert>
+//#include "Arduino.h"
 
 #include "Print.h"
 
@@ -41,14 +42,17 @@ size_t Print::write(const uint8_t *buffer, size_t size)
 
 size_t Print::print(const __FlashStringHelper *ifsh)
 {
-  const char PROGMEM *p = (const char PROGMEM *)ifsh;
+  fprintf(stderr, "size_t Print::print(const __FlashStringHelper*) not "
+                  "implemented in file " __FILE__ " line %d\n", __LINE__);
+  assert(0);
+  /*const char PROGMEM *p = (const char PROGMEM *)ifsh;
   size_t n = 0;
   while (1) {
     unsigned char c = pgm_read_byte(p++);
     if (c == 0) break;
     n += write(c);
   }
-  return n;
+  return n;*/
 }
 
 size_t Print::print(const String &s)
