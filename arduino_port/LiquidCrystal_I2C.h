@@ -8,12 +8,16 @@
 #include <inttypes.h>
 #include "Print.h" 
 
+
+/*
 #if defined(__AVR_ATtiny85__) || (__AVR_ATtiny2313__)
 #include "TinyWireM.h"      // include this if ATtiny85 or ATtiny2313
 #else 
 #include <Wire.h>           // original lib include
 #endif
+*/
 
+#include <wiringPi.h>
 
 // commands
 #define LCD_CLEARDISPLAY 0x01
@@ -57,9 +61,9 @@
 #define LCD_BACKLIGHT 0x08
 #define LCD_NOBACKLIGHT 0x00
 
-#define En B00000100  // Enable bit
-#define Rw B00000010  // Read/Write bit
-#define Rs B00000001  // Register select bit
+#define En 4 //B00000100  // Enable bit
+#define Rw 2 //B00000010  // Read/Write bit
+#define Rs 1 //B00000001  // Register select bit
 
 class LiquidCrystal_I2C : public Print {
 public:

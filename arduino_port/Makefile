@@ -4,5 +4,5 @@ all: *.h *.cpp
 	g++ -c WString.cpp
 	g++ -c Print.cpp
 	g++ -c LiquidCrystal.cpp
-	g++ -c LiquidCrystal_I2C.cpp
+	g++ -c LiquidCrystal_I2C.cpp -DARDUINO=100
 
