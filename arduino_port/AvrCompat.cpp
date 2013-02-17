@@ -40,4 +40,13 @@ void ultoa(unsigned long val, char* buf, int base)
 	}
 }
 
+void itoa(int i, char* buf, int base)
+{
+	ltoa(i, buf, base);
+}
+
+void utoa(unsigned int i, char* buf, int base)
+{
+	ultoa(i, buf, base);
+}
 
